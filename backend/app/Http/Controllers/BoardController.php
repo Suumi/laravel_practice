@@ -7,7 +7,7 @@ use App\Models\Post;
 class BoardController
 {
     public function index() {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::latest()->get();
 
         return view('board.index')
             ->with(['posts' => $posts]);
