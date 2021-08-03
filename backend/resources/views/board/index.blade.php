@@ -5,10 +5,10 @@
 
     <h1>掲示板</h1>
     <ul>
-        @forelse ($posts as $index => $post)
+        @forelse ($posts as $post)
             <li>
-                <a href="{{ route('board.show', $index) }}">
-                    {{ $post }}
+                <a href="{{ route('board.show', $post->id) }}">
+                    {{ $post->title }}
                 </a>
             </li>
         @empty
