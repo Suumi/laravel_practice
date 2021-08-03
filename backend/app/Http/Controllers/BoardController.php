@@ -14,7 +14,7 @@ class BoardController
     }
 
     public function show($id) {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
 
         return view('board.show')
             ->with(['post' => $post]);
