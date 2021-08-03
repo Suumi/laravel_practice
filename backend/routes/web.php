@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 Route::get('board/index', [BoardController::class, 'index'])->name('board.index');
 Route::get('board/posts/{post}', [BoardController::class, 'show'])->name('board.show')->where('post', '[0-9]+');
+Route::get('board/create', [BoardController::class, 'create'])->name('board.create');

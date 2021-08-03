@@ -17,4 +17,8 @@ class BoardController
         return view('board.show')
             ->with(['post' => $post]);
     }
+
+    public function create() {
+        return view('board.create');
+    }
 }
