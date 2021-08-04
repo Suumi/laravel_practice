@@ -8,4 +8,23 @@
     </div>
 
     <h1>新規投稿</h1>
+
+    <form method="post" action="{{ route('board.store') }}">
+        @csrf
+        <div class="form-group">
+            <label>
+                タイトル
+                <input type="text" name="title">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                本文
+                <textarea name="body"></textarea>
+            </label>
+        </div>
+        <div class="form-button">
+            <button>投稿</button>
+        </div>
+    </form>
 </x-layout>

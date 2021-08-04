@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Post;
 
 class BoardController
@@ -20,5 +21,14 @@ class BoardController
 
     public function create() {
         return view('board.create');
+    }
+
+    public function store(Request $request) {
+        $post = new Post();
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+
+        return redirect()->route('board.index');
     }
 }
