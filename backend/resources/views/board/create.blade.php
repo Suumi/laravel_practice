@@ -16,12 +16,18 @@
                 タイトル
                 <input type="text" name="title">
             </label>
+            @error('title')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label>
                 本文
                 <textarea name="body"></textarea>
             </label>
+            @error('body')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-button">
             <button>投稿</button>
