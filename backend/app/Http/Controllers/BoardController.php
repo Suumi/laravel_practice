@@ -45,4 +45,10 @@ class BoardController
 
         return redirect()->route('board.show', $post);
     }
+
+    public function destroy(Post $post) {
+        $post->delete();
+
+        return redirect()->route('board.index');
+    }
 }

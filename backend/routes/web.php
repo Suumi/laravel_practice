@@ -12,3 +12,4 @@ Route::get('board/create', [BoardController::class, 'create'])->name('board.crea
 Route::post('board/store', [BoardController::class, 'store'])->name('board.store');
 Route::get('board/posts/{post}/edit', [BoardController::class, 'edit'])->name('board.edit')->where('post', '[0-9]+');
 Route::patch('board/posts/{post}/update', [BoardController::class, 'update'])->name('board.update')->where('post', '[0-9]+');
+Route::delete('board/posts/{post}/destroy', [BoardController::class, 'destroy'])->name('board.destroy')->where('post', '[0-9]+');
