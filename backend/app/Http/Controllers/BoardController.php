@@ -27,6 +27,10 @@ class BoardController
         $request->validate([
             'title' => 'required|min:3',
             'body' => 'required',
+        ], [
+            'title.required' => 'タイトルは必須です',
+            'title.min' => ':min 文字以上入力してください',
+            'body.required' => '本文は必須です',
         ]);
 
         $post = new Post();
