@@ -18,6 +18,23 @@
     </h1>
     <p>{!! nl2br(e($post->body)) !!}</p>
 
+    <h2>コメント</h2>
+    <ul>
+        <li>
+            <form method="post" action="{{ route('comments.store', $post) }}" class="comment-form">
+                @csrf
+                <input type="text" name="body">
+                <button>add</button>
+            </form>
+        </li>
+        @foreach ($post->comments()->latest()->get() as $comment)
+            <li>
+                {{ $comment->body }}
+            </li>
+        @endforeach
+    </ul>
+
+
     <script>
         'use strict';
 
