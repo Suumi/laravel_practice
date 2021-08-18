@@ -15,3 +15,4 @@ Route::get('board/posts/{post}/edit', [BoardController::class, 'edit'])->name('b
 Route::patch('board/posts/{post}/update', [BoardController::class, 'update'])->name('board.update')->where('post', '[0-9]+');
 Route::delete('board/posts/{post}/destroy', [BoardController::class, 'destroy'])->name('board.destroy')->where('post', '[0-9]+');
 Route::post('board/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store')->where('post', '[0-9]+');
+Route::delete('board/comments/{comment}/destroy', [CommentController::class, 'destroy'])->name('comments.destroy')->where('comment', '[0-9]+');

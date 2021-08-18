@@ -20,4 +20,10 @@ class CommentController extends Controller
 
         return redirect()->route('board.show', $post);
     }
+
+    public function destroy(Comment $comment) {
+        $comment->delete();
+
+        return redirect()->route('board.show', $comment->post);
+    }
 }
