@@ -23,7 +23,7 @@ class RoutingTest extends TestCase
      *
      * @return void
      */
-    public function ルーティングテスト()
+    function ルーティングテスト()
     {
         $this->get(route('top'))->assertStatus(200);
         $this->get(route('board.index'))->assertStatus(200);
