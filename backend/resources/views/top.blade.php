@@ -10,6 +10,7 @@
         <div class="container">
             <h1>トップページ</h1>
             <a href="{{ route('board.index') }}">掲示板</a>
+            <a href="{{ route('hitblow.index') }}">HIT&BLOW</a>
         </div>
     </body>
 </html>
