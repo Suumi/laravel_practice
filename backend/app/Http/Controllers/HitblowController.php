@@ -15,4 +15,9 @@ class HitblowController
     {
         return view('hitblow.game');
     }
+
+    public function result()
+    {
+        return view('hitblow.result');
+    }
 }
