@@ -19,3 +19,4 @@ Route::delete('board/comments/{comment}/destroy', [CommentController::class, 'de
 Route::get('hitblow/index', [HitblowController::class, 'index'])->name('hitblow.index');
 Route::get('hitblow/game', [HitblowController::class, 'game'])->name('hitblow.game');
 Route::get('hitblow/result', [HitblowController::class, 'result'])->name('hitblow.result');
+Route::get('hitblow/clear', [HitblowController::class, 'clear'])->name('hitblow.clear');

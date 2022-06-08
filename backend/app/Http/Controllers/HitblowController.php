@@ -20,4 +20,9 @@ class HitblowController
     {
         return view('hitblow.result');
     }
+
+    public function clear()
+    {
+        return view('hitblow.clear');
+    }
 }
