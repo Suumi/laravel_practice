@@ -16,9 +16,11 @@ class HitblowController
         return view('hitblow.game');
     }
 
-    public function result()
+    public function result(Request $request)
     {
-        return view('hitblow.result');
+        $number = $request->number;
+
+        return view('hitblow.result', ['number' => $number]);
     }
 
     public function clear()
