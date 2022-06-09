@@ -18,5 +18,6 @@ Route::post('board/posts/{post}/comments', [CommentController::class, 'store'])-
 Route::delete('board/comments/{comment}/destroy', [CommentController::class, 'destroy'])->name('comments.destroy')->where('comment', '[0-9]+');
 Route::get('hitblow/index', [HitblowController::class, 'index'])->name('hitblow.index');
 Route::get('hitblow/game', [HitblowController::class, 'game'])->name('hitblow.game');
+Route::get('hitblow/result', [HitblowController::class, 'result'])->name('hitblow.result');
 Route::post('hitblow/result', [HitblowController::class, 'result'])->name('hitblow.result');
 Route::get('hitblow/clear', [HitblowController::class, 'clear'])->name('hitblow.clear');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class HitblowController
 {
+    private $goal_number = 9314;
+
     public function index()
     {
         return view('hitblow.index');
@@ -19,6 +21,10 @@ class HitblowController
     public function result(Request $request)
     {
         $number = $request->number;
+
+        if ($number == $this->goal_number) {
+            return view('hitblow.clear', ['number' => $number]);
+        }
 
         return view('hitblow.result', ['number' => $number]);
     }
