@@ -9,8 +9,8 @@
         <p>【{{$number}}】</p>
     </div>
     <div>
-        <p>HIT:1</p>
-        <p>BLOW:2</p>
+        <p>HIT:{{$hit}}</p>
+        <p>BLOW:{{$blow}}</p>
     </div>
     <div>
         <p>次に予想する数字を入力</p>
