@@ -20,6 +20,11 @@ class HitblowController
 
     public function result(Request $request)
     {
+        $try = $request->try;
+        if (!$try) {
+            $try = 0;
+        }
+        $try++;
         $hit = 0;
         $blow = 0;
         $estimated = $request->number;
@@ -40,13 +45,17 @@ class HitblowController
         if ($estimated == $this->goal_number) {
             return view(
                 'hitblow.clear',
-                ['number' => $estimated]
+                [
+                    'try' => $try,
+                    'number' => $estimated,
+                ]
             );
         }
 
         return view(
             'hitblow.result',
             [
+                'try' => $try,
                 'hit' => $hit,
                 'blow' => $blow,
                 'number' => $estimated,

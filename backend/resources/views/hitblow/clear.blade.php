@@ -9,7 +9,7 @@
         <p>【{{$number}}】</p>
     </div>
     <div>
-        <p>的中までのチャレンジ数:3回</p>
+        <p>的中までのチャレンジ数:{{$try}}回</p>
         <p>評価:まあまあですね</p>
     </div>
     <a href="{{ route('hitblow.index') }}">はじめから</a>
