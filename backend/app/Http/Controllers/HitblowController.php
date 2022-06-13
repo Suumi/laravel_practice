@@ -20,13 +20,34 @@ class HitblowController
 
     public function result(Request $request)
     {
-        $number = $request->number;
+        $hit = 0;
+        $blow = 0;
+        $estimated = $request->number;
 
-        if ($number == $this->goal_number) {
-            return view('hitblow.clear', ['number' => $number]);
+        $array_estimated = str_split($estimated);
+        $array_goalNum = str_split($this->goal_number);
+
+        foreach ($array_estimated as $estimatedElem) {
+            if (in_array($estimatedElem, $array_goalNum)) {
+                $blow++;
+            }
         }
 
-        return view('hitblow.result', ['number' => $number]);
+        if ($estimated == $this->goal_number) {
+            return view(
+                'hitblow.clear',
+                ['number' => $estimated]
+            );
+        }
+
+        return view(
+            'hitblow.result',
+            [
+                'hit' => $hit,
+                'blow' => $blow,
+                'number' => $estimated,
+            ]
+        );
     }
 
     public function clear()
