@@ -27,7 +27,11 @@ class HitblowController
         $array_estimated = str_split($estimated);
         $array_goalNum = str_split($this->goal_number);
 
-        foreach ($array_estimated as $estimatedElem) {
+        foreach ($array_estimated as $index => $estimatedElem) {
+            if (str_split($this->goal_number)[$index] == $estimatedElem) {
+                $hit++;
+            }
+
             if (in_array($estimatedElem, $array_goalNum)) {
                 $blow++;
             }
