@@ -3,6 +3,16 @@
         HIT&BLOW
     </x-slot>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div>
         <p>予想する数字を入力</p>
         <form action="{{ route('hitblow.result') }}" method="post">

@@ -20,6 +20,12 @@ class HitblowController
 
     public function result(Request $request)
     {
+        if ($request->method() == 'POST') {
+            $request->validate([
+                'number' => 'required|integer|digits:4',
+            ]);
+        }
+
         $try = $request->try;
         if (!$try) {
             $try = 0;
