@@ -31,7 +31,12 @@ class HitblowController
             $try = 0;
         }
         $try++;
-        $hit = 0;
+
+        $hit = $request->hit;
+        if (!array_key_exists($try - 1, $hit)) {
+            $hit[$try - 1] = 0;
+        }
+
         $blow = 0;
         $estimated = $request->number;
 
@@ -40,7 +45,7 @@ class HitblowController
 
         foreach ($array_estimated as $index => $estimatedElem) {
             if (str_split($this->goal_number)[$index] == $estimatedElem) {
-                $hit++;
+                $hit[$try - 1]++;
             }
 
             if (in_array($estimatedElem, $array_goalNum)) {

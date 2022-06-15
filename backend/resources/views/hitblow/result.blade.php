@@ -19,7 +19,7 @@
         <p>【{{$number}}】</p>
     </div>
     <div>
-        <p>HIT:{{$hit}}</p>
+        <p>HIT:{{$hit[$try - 1]}}</p>
         <p>BLOW:{{$blow}}</p>
     </div>
     <div>
@@ -27,6 +27,10 @@
         <form action="{{ route('hitblow.result') }}" method="post">
             @csrf
             <input type="hidden" name="try" value="{{$try}}">
+            @foreach ($hit as $key => $hit_elem)
+                <input type="hidden" name="hit[{{$key}}]" value="{{ $hit_elem }}" >
+            @endforeach
+            <input type="hidden" name="blow" value="{{$blow}}">
             <input type="text" name="number">
             <input type="submit" value="決定">
         </form>
