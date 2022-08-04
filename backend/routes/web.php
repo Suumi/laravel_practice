@@ -5,6 +5,7 @@ use App\Http\Controllers\BoardController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\HitblowController;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', [TopController::class, 'index'])->name('top');
 Route::get('board/index', [BoardController::class, 'index'])->name('board.index');
@@ -21,3 +22,4 @@ Route::get('hitblow/game', [HitblowController::class, 'game'])->name('hitblow.ga
 Route::get('hitblow/result', [HitblowController::class, 'result'])->name('hitblow.result');
 Route::post('hitblow/result', [HitblowController::class, 'result'])->name('hitblow.result');
 Route::get('hitblow/clear', [HitblowController::class, 'clear'])->name('hitblow.clear');
+Route::get('blog/index', [BlogController::class, 'index'])->name('blog.index');
